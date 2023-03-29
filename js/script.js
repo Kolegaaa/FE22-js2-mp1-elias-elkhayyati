@@ -192,7 +192,7 @@ function checkIfhighscore() {
     setTimeout(() => {
         let response = alert('Bra spelat,tryck ok för att börja om.');
         if (!response) window.location.reload();
-    }, 500);
+    }, 501);
 }
 
 //När ‘datorn’ har vunnit ska spelarens nya poäng jämföras med highscore-listan.
