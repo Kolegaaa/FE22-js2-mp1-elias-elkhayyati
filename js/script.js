@@ -176,26 +176,23 @@ function slutresultat(event) {
 //Om spelarens nya poäng platsar på listan ska den nya poängen läggas till på rätt plats i databasen med spelarens namn. (Använd namnet som användaren angett i början av spelet.)Highscore-listan på webbsidan uppdateras
 
 function checkIfhighscore() {
-  if (playerscore > lowestScoreValue) {
-    h1.innerHTML = `Grattis ${namn}!!!! , Du tillhör nu bland dom bästa i HighScore `;
-    h1.style.color = "green";
-    deleteLowest();
-    patch();
-    readHighscore();
-  } else {
-    h1.style.color = "red";
-    h1.innerHTML = `Tyvärr ${namn} du förlora !!! Försök igen`;
-  }
+    if (playerscore > lowestScoreValue) {
+        h1.innerHTML = `Grattis ${namn}!!!! , Du tillhör nu bland dom bästa i HighScore `;
+        h1.style.color = 'green';
+        deleteLowest();
+        patch();
+        readHighscore();
+    } else {
+        h1.style.color = 'red';
+        h1.innerHTML = `Tyvärr ${namn} du förlora !!! Försök igen`;
+    }
 
-  setTimeout(
-    () =>
-     { 
-      
-      let response = confirm("välj sten sax eller påse för att fortsätta köra med samma namn.");
-      if(!response)window.location.reload()
-    },
-    500
-  );
+    console.log(playerscore);
+
+    setTimeout(() => {
+        let response = alert('Bra spelat,tryck ok för att börja om.');
+        if (!response) window.location.reload();
+    }, 500);
 }
 
 //När ‘datorn’ har vunnit ska spelarens nya poäng jämföras med highscore-listan.
