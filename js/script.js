@@ -186,9 +186,14 @@ function checkIfhighscore() {
     h1.style.color = "red";
     h1.innerHTML = `Tyvärr ${namn} du förlora !!! Försök igen`;
   }
+
   setTimeout(
     () =>
-      alert("välj sten sax eller påse för att fortsätta köra med samma namn."),
+     { 
+      
+      let response = confirm("välj sten sax eller påse för att fortsätta köra med samma namn.");
+      if(!response)window.location.reload()
+    },
     500
   );
 }
